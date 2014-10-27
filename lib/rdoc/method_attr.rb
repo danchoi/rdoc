@@ -5,6 +5,16 @@ class RDoc::MethodAttr < RDoc::CodeObject
 
   include Comparable
 
+  def to_hash
+    super.merge(
+      {
+        name: name, 
+        visibility: visibility, 
+        singleton: singleton, 
+        aliases: aliases
+      }
+    )
+  end
   ##
   # Name of this method/attribute.
 

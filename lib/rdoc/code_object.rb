@@ -28,6 +28,14 @@ class RDoc::CodeObject
 
   include RDoc::Text
 
+  def to_hash
+    { type: self.class.to_s,
+      comment: comment.to_hash, 
+      file: file,
+      line: line,
+      metadata: metadata }
+  end
+
   ##
   # Our comment
 

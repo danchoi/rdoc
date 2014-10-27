@@ -12,6 +12,12 @@ class RDoc::Comment
 
   include RDoc::Text
 
+  def to_hash
+    { format:format,
+      location:location,
+      text:text }
+  end
+
   ##
   # The format of this comment.  Defaults to RDoc::Markup
 

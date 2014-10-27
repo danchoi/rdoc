@@ -888,6 +888,7 @@ class RDoc::Store
     return if @dry_run
 
     marshal = Marshal.dump method
+    puts method.to_hash.to_json
 
     open method_file(full_name, method.full_name), 'wb' do |io|
       io.write marshal
